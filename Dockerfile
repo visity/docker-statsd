@@ -15,6 +15,8 @@ RUN groupadd -r statsd && useradd -r -g statsd statsd
 
 RUN npm install -g statsd@0.7.2
 
+ENV CARBON_HOST carbon
+
 # Setup config
 COPY statsd-config.js /opt/statsd/config.js
 

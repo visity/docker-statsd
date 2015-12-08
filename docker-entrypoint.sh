@@ -2,6 +2,8 @@
 
 set -e
 
+sed 's#graphiteHost: .*#graphiteHost: "'"$CARBON_HOST"'",#' -i /opt/statsd/config.js;
+
 # Add statsd as command if needed
 if [ "${1:0:1}" = '-' ]; then
 	set -- statsd "$@"
